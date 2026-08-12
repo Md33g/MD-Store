@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MD Store • Premium Apps</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg: #030408;
+            --surface: #0a0c14;
+            --surface-hover: #101320;
+            --border: rgba(0, 242, 254, 0.12);
+            --border-hover: rgba(0, 242, 254, 0.4);
+            --accent: #00f2fe;
+            --accent-glow: rgba(0, 242, 254, 0.15);
+            --text-main: #f8fafc;
+            --text-muted: #64748b;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            background-image: 
+                radial-gradient(circle at 50% -20%, rgba(0, 242, 254, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 50% 120%, rgba(0, 114, 255, 0.05) 0%, transparent 50%);
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 16px 20px;
+            border-bottom: 1px solid var(--border);
+            background: rgba(10, 12, 20, 0.7);
+            backdrop-filter: blur(12px);
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .logo-wrapper {
+            font-size: 1.5rem;
+            filter: drop-shadow(0 0 10px var(--accent-glow));
+        }
+
+        header h1 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            background: linear-gradient(135deg, #ffffff 40%, var(--accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .container {
+            max-width: 560px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 24px 16px;
+            flex: 1;
+        }
+
+        .section-title {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-bottom: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+        }
+
+        .app-card {
+            background-color: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 14px 16px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .app-card:hover {
+            background-color: var(--surface-hover);
+            border-color: var(--border-hover);
+            box-shadow: 0 8px 24px var(--accent-glow);
+            transform: translateY(-2px);
+        }
+
+        .app-info {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            min-width: 0;
+        }
+
+        .app-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 10px;
+            object-fit: cover;
+            border: 1px solid var(--border);
+            background: #05050a;
+            flex-shrink: 0;
+        }
+
+        .app-details {
+            min-width: 0;
+        }
+
+        .app-details h3 {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--text-main);
+            margin-bottom: 2px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .app-details p {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+
+        .download-btn {
+            background: linear-gradient(135deg, #00f2fe 0%, #0072ff 100%);
+            color: #030408;
+            padding: 8px 16px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.825rem;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 12px rgba(0, 114, 255, 0.25);
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+
+        .download-btn:hover {
+            opacity: 0.95;
+            transform: scale(1.02);
+            box-shadow: 0 4px 16px rgba(0, 242, 254, 0.35);
+        }
+
+        footer {
+            text-align: center;
+            padding: 16px;
+            border-top: 1px solid var(--border);
+            color: var(--text-muted);
+            font-size: 0.75rem;
+            background: rgba(10, 12, 20, 0.4);
+            letter-spacing: 0.3px;
+        }
+
+        footer span {
+            color: var(--accent);
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <span class="logo-wrapper">🐺</span>
+        <h1>MD Store</h1>
+    </header>
+
+    <div class="container">
+        <div class="section-title">Verified Releases</div>
+        
+        <div class="app-card">
+            <div class="app-info">
+                <img src="assets/hb-picker-icon.png" alt="HB Picker" class="app-icon">
+                <div class="app-details">
+                    <h3>HB Picker</h3>
+                    <p>v1.0.0 • APK</p>
+                </div>
+            </div>
+            <a href="PASTE_YOUR_DIRECT_DOWNLOAD_LINK_HERE" class="download-btn" target="_blank">
+                <i class="fa-solid fa-download"></i> Download
+            </a>
+        </div>
+    </div>
+
+    <footer>
+        Made by <span>ItzzMdg</span>
+    </footer>
+
+</body>
+</html>
